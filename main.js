@@ -38,44 +38,55 @@
 
 var victimamt = prompt("How many disaster victims do you wish to enter?");
 var victims = [];
-for(var i=0; i<victimamt; i++){
-	var Name=prompt("Name:");
-	var Phone= prompt("Phone:");
-	var Street= prompt("Street:");
+var vicNames = [];
+
+
+	for(var i=0; i<victimamt; i++){
+		var vicName=prompt("Name:");
+		var vicPhone= prompt("phone:");
+		var vicStreet= prompt("Street:");
 
 
 		var victim = {
-			Name: Name,
-			Phone: Phone,
-			Street: Street
+			vicName: vicName,
+			vicPhone: vicPhone,
+			vicStreet : vicStreet
+		};
+			victims.push(victim)
+			};
+
+		for (var i=0; i<victims.length; i++){
+			vicNames.push(victims[i].vicName)
+
 		}
-		
 	
-		victims.push(victim);
 
-}
-
+			
 
 var volunteeramt = prompt("How many disaster volunteers do you wish to enter?");
 var volunteers = [];
+var volNames = [];
 
-for(var i=0; i<volunteeramt; i++){
-	var Name=prompt("Name:");
-	var Phone= prompt("Phone:");
-	var Street= prompt("Street:");
-
-
-		var volunteer = {
-			Name: Name,
-			Phone: Phone,
-			Street: Street
-		}
-		volunteers.push(volunteer);
-};
+	for(var i=0; i<volunteeramt; i++){
+		var volName=prompt("Name:");
+		var volPhone= prompt("Phone:");
+		var volStreet= prompt("Street:");
 
 
-var summary = alert("Persons in need: " + volunteeramt + "\nHelpers: " + volunteeramt + 
-	"\nVictims: " + victim.Name + "\nvolunteers: " + volunteer.Name);
+			var volunteer = {
+				volName: volName,
+				volPhone: volPhone,
+				volStreet: volStreet
+			};
+			
+				volunteers.push(volunteer);
+				};
+
+				for(var i=0; i<volunteers.length; i++){
+					volNames.push(volunteers[i].volName);
+				}
 
 
+var summary = alert("Persons in need: " + victimamt + "\nNames: " + vicNames + "\nHelpers: " + 
+	volunteeramt + "\nNames: " + volNames);
 
